@@ -8,14 +8,16 @@ void runSubArrayZeroBruteForce();
 void runSubArrayZeroOptimzed();
 void runPrintDuplicate();
 void runMaxProduct();
+void runMinSizeSubArray();
 
 void main()
 {
-  runMaxProduct();
 
+  runMinSizeSubArray();
+
+  //runMaxProduct();
   //runPrintDuplicate();  
   //runSubArrayZeroOptimzed();
-
   //runSubArrayZeroBruteForce();
   //runWave();
 

@@ -8,7 +8,8 @@ project(Week1)
 
 set(SOURCE
 	main.cpp
-	SubArrayZero.cpp
+	SubArrayZeroBruteForce.cpp
+	SubArrayZeroOptimized.cpp
 	WaveArray.cpp)
 	
 	

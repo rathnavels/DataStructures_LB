@@ -1,10 +1,13 @@
 #include <iostream>
 
 void runWave();
+void runSubArrayZeroBruteForce();
 
 void main()
 {
-  runWave();
+  
+  runSubArrayZeroBruteForce();
+  //runWave();
 
   getchar();
 }

@@ -14,7 +14,8 @@ set(SOURCE
 	PrintDuplicate.cpp
 	Template.cpp
 	MaxProductBurteForce.cpp
-	MinSizeSubArray.cpp)
+	MinSizeSubArray.cpp
+	SwapThreeNum.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

@@ -9,12 +9,15 @@ void runSubArrayZeroOptimzed();
 void runPrintDuplicate();
 void runMaxProduct();
 void runMinSizeSubArray();
+void runSwapThree1();
+void runSwapThree2();
 
 void main()
 {
+  runSwapThree1();
+  runSwapThree2();
 
-  runMinSizeSubArray();
-
+  //runMinSizeSubArray();
   //runMaxProduct();
   //runPrintDuplicate();  
   //runSubArrayZeroOptimzed();

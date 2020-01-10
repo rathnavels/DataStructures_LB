@@ -12,7 +12,8 @@ set(SOURCE
 	SubArrayZeroOptimized.cpp
 	WaveArray.cpp
 	PrintDuplicate.cpp
-	Template.cpp)
+	Template.cpp
+	MaxProductBurteForce.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

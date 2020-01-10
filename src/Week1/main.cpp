@@ -7,11 +7,13 @@ void runWave();
 void runSubArrayZeroBruteForce();
 void runSubArrayZeroOptimzed();
 void runPrintDuplicate();
+void runMaxProduct();
 
 void main()
 {
+  runMaxProduct();
 
-  runPrintDuplicate();  
+  //runPrintDuplicate();  
   //runSubArrayZeroOptimzed();
 
   //runSubArrayZeroBruteForce();

@@ -10,7 +10,9 @@ set(SOURCE
 	main.cpp
 	SubArrayZeroBruteForce.cpp
 	SubArrayZeroOptimized.cpp
-	WaveArray.cpp)
+	WaveArray.cpp
+	PrintDuplicate.cpp
+	Template.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

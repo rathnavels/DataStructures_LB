@@ -1,12 +1,18 @@
+//Rathinavel Sankaralingam
+//Jan 10, 2020
+
 #include <iostream>
 
 void runWave();
 void runSubArrayZeroBruteForce();
 void runSubArrayZeroOptimzed();
+void runPrintDuplicate();
 
 void main()
 {
-  runSubArrayZeroOptimzed();
+
+  runPrintDuplicate();  
+  //runSubArrayZeroOptimzed();
 
   //runSubArrayZeroBruteForce();
   //runWave();

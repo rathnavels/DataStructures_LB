@@ -2,11 +2,13 @@
 
 void runWave();
 void runSubArrayZeroBruteForce();
+void runSubArrayZeroOptimzed();
 
 void main()
 {
-  
-  runSubArrayZeroBruteForce();
+  runSubArrayZeroOptimzed();
+
+  //runSubArrayZeroBruteForce();
   //runWave();
 
   getchar();

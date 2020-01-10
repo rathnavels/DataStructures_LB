@@ -1,7 +1,10 @@
 #include <iostream>
 
+void runWave();
+
 void main()
 {
-  std::cout << "Hello World";
+  runWave();
+
   getchar();
 }

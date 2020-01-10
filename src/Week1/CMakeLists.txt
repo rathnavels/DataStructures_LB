@@ -8,7 +8,8 @@ project(Week1)
 
 set(SOURCE
 	main.cpp
-	SubArrayZero.cpp)
+	SubArrayZero.cpp
+	WaveArray.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

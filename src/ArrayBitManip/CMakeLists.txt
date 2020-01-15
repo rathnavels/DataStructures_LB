@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.6)
 set (CMAKE_VERBOSE_MAKEFILE 1)
 
 
-project(Week1)
+project(ArrayBitManip)
 
 
 set(SOURCE
@@ -15,7 +15,8 @@ set(SOURCE
 	Template.cpp
 	MaxProductBurteForce.cpp
 	MinSizeSubArray.cpp
-	SwapThreeNum.cpp)
+	SwapThreeNum.cpp
+	NumberofBits.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

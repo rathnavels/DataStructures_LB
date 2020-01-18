@@ -12,10 +12,14 @@ void runMinSizeSubArray();
 void runSwapThree1();
 void runSwapThree2();
 void runNumBits();
+void runNextGreaterElement();
 
 void main()
 {
-  runNumBits();
+
+  runNextGreaterElement();
+
+  //runNumBits();
   //runSwapThree1();
   //runSwapThree2();
 

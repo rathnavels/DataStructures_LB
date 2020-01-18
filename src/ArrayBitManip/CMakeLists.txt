@@ -16,7 +16,8 @@ set(SOURCE
 	MaxProductBurteForce.cpp
 	MinSizeSubArray.cpp
 	SwapThreeNum.cpp
-	NumberofBits.cpp)
+	NumberofBits.cpp
+	NextGreaterElement.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

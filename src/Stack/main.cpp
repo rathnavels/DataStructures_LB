@@ -3,26 +3,12 @@
 
 #include <iostream>
 
-void runWave();
-void runSubArrayZeroBruteForce();
-void runSubArrayZeroOptimzed();
-void runPrintDuplicate();
-void runMaxProduct();
-void runMinSizeSubArray();
-void runSwapThree1();
-void runSwapThree2();
+void runNGEStack();
 
 void main()
 {
-  runSwapThree1();
-  runSwapThree2();
 
-  //runMinSizeSubArray();
-  //runMaxProduct();
-  //runPrintDuplicate();  
-  //runSubArrayZeroOptimzed();
-  //runSubArrayZeroBruteForce();
-  //runWave();
+  runNGEStack();
 
   getchar();
 }

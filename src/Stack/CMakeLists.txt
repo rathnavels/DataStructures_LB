@@ -8,6 +8,7 @@ project(Stack)
 
 set(SOURCE
 	main.cpp
+	NGEStack.cpp
 	Template)
 	
 	

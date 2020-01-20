@@ -17,7 +17,8 @@ set(SOURCE
 	MinSizeSubArray.cpp
 	SwapThreeNum.cpp
 	NumberofBits.cpp
-	NextGreaterElement.cpp)
+	NextGreaterElement.cpp
+	FlipBits.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

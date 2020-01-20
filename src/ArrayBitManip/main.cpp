@@ -15,13 +15,12 @@ void runNumBits();
 void runNextGreaterElement();
 void runNGEStack();
 
+void runFlipBits();
+
 void main()
 {
 
-  runNGEStack();
-
-  std::cout << "\n" << "Lets print this guy here\n";
-  runNextGreaterElement();
+  runFlipBits();
 
   //runNumBits();
   //runSwapThree1();

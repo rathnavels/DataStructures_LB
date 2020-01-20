@@ -23,3 +23,15 @@ void runNumBits()
 
   std::cout << count;
 }
+
+int countBits(int k)
+{
+  int count = 0;
+  while(k > 0)
+  {
+    count++;
+    k = k >> 1;
+  }
+
+  return count;
+}

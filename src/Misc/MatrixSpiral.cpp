@@ -27,7 +27,7 @@ void runMatrixSpiral()
   int minX = 0;
   int minY = 0;
 
-  for(int i=0; i<30; i++)
+  for(int i=0; i<rows*cols; i++)
   {
     std::cout << a[x][y];
     if(right)

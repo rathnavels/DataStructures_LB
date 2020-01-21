@@ -11,11 +11,11 @@ void runMatrixSpiral()
   const int rows = 6;
   const int cols = 5;
   int a[rows][cols] = {{1,2,3,4,5},
-                 {6,7,8,9,10},
-                 {1,2,3,4,5},
-                 {6,7,8,9,10},
-                 {1,2,3,4,5},
-                 {6,7,8,9,10}};
+                      {6,7,8,9,10},
+                      {1,2,3,4,5},
+                      {6,7,8,9,10},
+                      {1,2,3,4,5},
+                      {6,7,8,9,10}};
    
   bool left=false,right=true,up=false,down=false;
 
@@ -29,14 +29,14 @@ void runMatrixSpiral()
 
   for(int i=0; i<rows*cols; i++)
   {
-    std::cout << a[x][y];
+    std::cout << a[x][y] << " ";
     if(right)
       y++;
-    if(down)
+    else if(down)
       x++;
-    if(up)
+    else if(up)
       x--;
-    if(left)
+    else
       y--;
     if(y == maxX)
     {

@@ -9,7 +9,8 @@ project(Misc)
 set(SOURCE
 	main.cpp
 	atoi.cpp
-	Template.cpp)
+	Template.cpp
+	MatrixSpiral.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

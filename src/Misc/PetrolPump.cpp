@@ -7,7 +7,7 @@
 
 void runPetrolPump()
 {
-  std::vector<std::vector<int>> pumpInfo = {{3,4},{8,9},{6,1},{5,7},{3,4}};
+  std::vector<std::vector<int>> pumpInfo = {{3,4},{8,8},{3,4},{8,1},{5,7},{3,4}};
 
   int startPoint =-1;
   for(int i=0; i<pumpInfo.size(); i++)
@@ -25,6 +25,8 @@ void runPetrolPump()
        int nxtIdx = (currIdx + 1) % pumpInfo.size();
        
        availableFuel = availableFuel - pumpInfo[currIdx][1];
+       if(availableFuel < 0)
+         break;
        availableFuel += pumpInfo[nxtIdx][0];
 
        turns--;
@@ -36,5 +38,5 @@ void runPetrolPump()
       break;
     }
   }
-  std::cout  << "The race should start at " << startPoint;
+  std::cout  << "The race should start at {" << pumpInfo[startPoint][0] << "," << pumpInfo[startPoint][1] << "}";
 }

@@ -10,7 +10,8 @@ set(SOURCE
 	main.cpp
 	atoi.cpp
 	Template.cpp
-	MatrixSpiral.cpp)
+	MatrixSpiral.cpp
+	PetrolPump.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

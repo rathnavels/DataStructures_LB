@@ -3,11 +3,11 @@
 
 #include <iostream>
 void runMatrixSpiral();
-
+void runPetrolPump();
 void runAtoi();
 
 void main()
 {
-  runMatrixSpiral();
+  runPetrolPump();
   getchar();
 }

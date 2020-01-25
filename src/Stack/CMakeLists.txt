@@ -9,7 +9,7 @@ project(Stack)
 set(SOURCE
 	main.cpp
 	NGEStack.cpp
-	Template)
+	StackSequence.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

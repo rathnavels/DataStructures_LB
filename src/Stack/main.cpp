@@ -4,11 +4,12 @@
 #include <iostream>
 
 void runNGEStack();
+void runValidateStackSequences();
 
 void main()
 {
 
-  runNGEStack();
+  runValidateStackSequences();
 
   getchar();
 }

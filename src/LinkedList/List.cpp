@@ -197,6 +197,7 @@ void reverseIteration()
 // ---------------------------------------------------------
 void sort()
 { 
+  // This is selection sort
   for(auto node = head; node->next!=NULL; node=node->next)
   {
     for(auto nxt = node->next; nxt!=NULL; nxt=nxt->next)
@@ -209,6 +210,7 @@ void sort()
       }
     }
   }
+  std::cout << "Sorting has happened\n";
   printList();
 }
 
@@ -272,26 +274,19 @@ void runLinkedList()
 
   InsertAtBeginning(4);
   InsertAtEnd(6);
-
   InsertAtBeginning(3);
   InsertAtEnd(7);
-
-  deleteByValue(4);
-  deleteByValue(3);
-  deleteByValue(7);
-  
-
   InsertAtBeginning(4);
-
   InsertAtBeginning(3);
   InsertAtEnd(7);
-
   
   reverseIteration();
   InsertAtBeginning(8);
   InsertAtEnd(2);
   InsertAtBeginning(12);
   sort();
+
+
   reverseRecursion();
   printList();
   reverseRecursion();

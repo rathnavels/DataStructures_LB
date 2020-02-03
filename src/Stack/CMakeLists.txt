@@ -9,7 +9,8 @@ project(Stack)
 set(SOURCE
 	main.cpp
 	NGEStack.cpp
-	StackSequence.cpp)
+	StackSequence.cpp
+	InfixToPostfix.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

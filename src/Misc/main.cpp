@@ -5,9 +5,10 @@
 void runMatrixSpiral();
 void runPetrolPump();
 void runAtoi();
+void runRaintrap();
 
 void main()
 {
-  runPetrolPump();
+  runRaintrap();
   getchar();
 }

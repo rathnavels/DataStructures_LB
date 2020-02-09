@@ -20,13 +20,13 @@ void runFlipBits();
 void main()
 {
 
-  runFlipBits();
+  //runFlipBits();
 
   //runNumBits();
   //runSwapThree1();
   //runSwapThree2();
 
-  //runMinSizeSubArray();
+  runMinSizeSubArray();
   //runMaxProduct();
   //runPrintDuplicate();  
   //runSubArrayZeroOptimzed();

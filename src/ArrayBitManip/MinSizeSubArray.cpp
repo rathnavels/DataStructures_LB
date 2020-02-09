@@ -12,11 +12,11 @@
 
 void runMinSizeSubArray()
 {
-  std::vector<int> arr = {10, 4, 3, 5 , 6, 3, 8 , 1};
+  std::vector<int> arr = {10, 4, 1, 2, 5 , 6, 3, 8, 1, 0};
   int minSum = INT_MAX;
   int K = 2;
   int index1, index2;
-  for(int i=0; i<arr.size()-K; i++)
+  for(int i=0; i<=arr.size()-K; i++)
   {
     int sum = arr[i];
     for(int j=i+1; j<i+K; j++)

@@ -10,7 +10,8 @@ set(SOURCE
 	main.cpp
 	NGEStack.cpp
 	StackSequence.cpp
-	InfixToPostfix.cpp)
+	InfixToPostfix.cpp
+	QueueUsingStack.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

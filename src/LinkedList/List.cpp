@@ -191,6 +191,20 @@ void reverseIteration()
 }
 
 
+// ---------------------------------------------------------
+// printInReverse
+// ---------------------------------------------------------
+void printInReverse(List *node)
+{
+  if(node == NULL)
+    return;
+
+  printInReverse(node->next);
+
+  std::cout << node->val << "\t";
+}
+
+
 
 // ---------------------------------------------------------
 // sort
@@ -291,6 +305,11 @@ void runLinkedList()
   printList();
   reverseRecursion();
   printList();
+
+  std::cout << std::endl;
+  std::cout << "Printing in Reverse\n";
+  
+  printInReverse(head);
 
 }
 

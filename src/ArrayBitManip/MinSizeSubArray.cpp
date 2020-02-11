@@ -7,8 +7,9 @@
 #include <algorithm>
 
 // Question : Minimum Sum Sub Array of size given size K
-// Input : 10, 4, 3, 5 , 6, 3, 8 , 1
-// Output : Index 1 to 3 with Sum as 12
+// Input : 10, 4, 1, 2, 5 , 6, 3, 8, 1, 0
+// Output : Index 8 to 9 with Sum as 1
+// K is 2
 
 void runMinSizeSubArray()
 {

@@ -3,12 +3,12 @@ cmake_minimum_required(VERSION 3.6)
 set (CMAKE_VERBOSE_MAKEFILE 1)
 
 
-project(ProjectTemplate)
+project(Sorting)
 
 
 set(SOURCE
 	main.cpp
-	atoi.cpp
+	RecursiveBubbleSort.cpp
 	)
 	
 	

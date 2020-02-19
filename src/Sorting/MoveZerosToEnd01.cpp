@@ -17,7 +17,7 @@ void print(std::vector<int> &arr)
 }
 
 
-void runMoveZeroToEnd()
+void runMoveZeroToEnd01()
 {
   vector<int> arr = {3,0,5,1,0,7,2,8,9,6,0};
   int count = 0;
@@ -36,6 +36,6 @@ void runMoveZeroToEnd()
     arr[i] = 0;
 
   print (arr);
-
   
 }
+

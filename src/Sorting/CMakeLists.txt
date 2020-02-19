@@ -11,6 +11,7 @@ set(SOURCE
 	RecursiveBubbleSort.cpp
 	MoveZerosToEnd01.cpp
 	MoveZerosToEnd02.cpp
+	RecursiveInsertionSort.cpp
 	)
 	
 	

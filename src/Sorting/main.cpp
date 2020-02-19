@@ -6,9 +6,10 @@
 void runRecursiveBubbleSort();
 void runMoveZeroToEnd02();
 void runMoveZeroToEnd01();
+void runRecursiveInsertionSort();
 
 void main()
 {
-  runMoveZeroToEnd02();
+  runRecursiveInsertionSort();
   getchar();
 }

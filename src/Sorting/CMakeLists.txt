@@ -9,6 +9,7 @@ project(Sorting)
 set(SOURCE
 	main.cpp
 	RecursiveBubbleSort.cpp
+	MoveZerosToEnd.cpp
 	)
 	
 	

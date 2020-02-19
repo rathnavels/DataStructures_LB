@@ -4,9 +4,10 @@
 #include <iostream>
 
 void runRecursiveBubbleSort();
+void runMoveZeroToEnd();
 
 void main()
 {
-  runRecursiveBubbleSort();
+  runMoveZeroToEnd();
   getchar();
 }

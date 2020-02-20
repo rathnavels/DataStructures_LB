@@ -12,6 +12,7 @@ set(SOURCE
 	MoveZerosToEnd01.cpp
 	MoveZerosToEnd02.cpp
 	RecursiveInsertionSort.cpp
+	MergeSort.cpp
 	)
 	
 	

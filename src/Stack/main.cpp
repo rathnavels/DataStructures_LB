@@ -5,11 +5,11 @@
 
 void runNGEStack();
 void runValidateStackSequences();
-
+void runPostFix();
 void main()
 {
 
-  runValidateStackSequences();
+  runPostFix();
 
   getchar();
 }

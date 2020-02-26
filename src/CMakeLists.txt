@@ -9,4 +9,5 @@ add_subdirectory(Queue)
 add_subdirectory(Misc)
 add_subdirectory(LinkedList)
 add_subdirectory(Sorting)
+add_subdirectory(Strings)
 

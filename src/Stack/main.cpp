@@ -8,8 +8,6 @@ void runValidateStackSequences();
 void runPostFix();
 void main()
 {
-
   runPostFix();
-
   getchar();
 }

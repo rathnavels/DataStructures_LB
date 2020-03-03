@@ -222,31 +222,30 @@ void preorderIterative(node *root)
 // postorderIterative
 // Not in proper shape yet
 //-----------------------------------------------------------
-void postorderIterative(node *root)
+void postorderIterativeTwoStack(node *root)
 {
-  stack<node*> S;
-  node *current = root;
-  while(1)
-  {
-      while(current!=NULL)
-      {
-        S.push(current);
-        current = current->leftChild;
-      }
+  stack<node*> stk1, stk2;
+  stk1.push(root);
 
-      if(current==NULL)
-      {
-        if(!S.empty())
-        {
-          std::cout << S.top()->data << "\t";
-          current = S.top()->rightChild;
-          S.pop();
-        }
-        else
-          break;
-      }
+  while(!stk1.empty())
+  {
+    auto temp = stk1.top();
+    stk1.pop();
+
+    stk2.push(temp);
+
+    if(temp->leftChild)
+      stk1.push(temp->leftChild);
+
+    if(temp->rightChild)
+      stk1.push(temp->rightChild);
   }
-  return;
+
+  while(!stk2.empty())
+    {
+      std::cout << stk2.top()->data << "\t";
+      stk2.pop();
+    }
 }
 
 void runBST()
@@ -259,14 +258,16 @@ void runBST()
   insert(4);
 
 
-  inorder(root); 
+  //inorder(root); 
+  //std::cout << std::endl;
+  //inorderIterative(root);
+  //std::cout << std::endl;
+  //preorder(root);
+  //std::cout << std::endl;
+  //preorderIterative(root);
+  postorder(root);
   std::cout << std::endl;
-  inorderIterative(root);
-  std::cout << std::endl;
-  preorder(root);
-  std::cout << std::endl;
-  preorderIterative(root);
-  std::cout << std::endl;
+  postorderIterativeTwoStack(root);
   
 
   //if(IsBalanced(root))

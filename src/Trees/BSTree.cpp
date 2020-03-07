@@ -6,6 +6,14 @@
 #include<stack>
 #include <queue>
 
+// 132 Inorder Traversal
+// 149 Prorder Traversal
+// 162 PostOrder Traversal
+// 177 Inorder Iterative
+// 209 Preorder Iterative
+// 235 PostOrder Iterative Two Stack
+// 265 Sum of K smallest Elements
+
 using namespace std;
 
 struct BalancedStatusWithHeight
@@ -17,11 +25,11 @@ struct BalancedStatusWithHeight
 struct node
 {
   int data;
-  node *leftChild;
-  node *rightChild;
+  node *left;
+  node *right;
 
-  node(int k) : data(k), leftChild(NULL), rightChild(NULL){}
-  node() : leftChild(NULL), rightChild(NULL){}
+  node(int k) : data(k), left(NULL), right(NULL){}
+  node() : left(NULL), right(NULL){}
   
 };
 
@@ -39,13 +47,13 @@ BalancedStatusWithHeight CheckBalanced(node *tree)
   if(tree == NULL)
   return {true, -1};
 
-  auto left_result = CheckBalanced(tree->leftChild);
+  auto left_result = CheckBalanced(tree->left);
   if(!left_result.balanced)
   {
     return {false,0};
   }
 
-  auto right_result = CheckBalanced(tree->rightChild);
+  auto right_result = CheckBalanced(tree->right);
   if(!right_result.balanced)
   {
     return {false, 0};
@@ -74,9 +82,9 @@ node* search(int data)
   while(1)
   {
     if(current->data > data)  
-      current = current->leftChild;
+      current = current->left;
     else
-      current = current->rightChild;
+      current = current->right;
 
     if(current==NULL)   
       return NULL;
@@ -95,8 +103,8 @@ void insert(int data)
   
   node *temp = new node();
   temp->data = data;
-  temp->leftChild = NULL;
-  temp->rightChild = NULL;
+  temp->left = NULL;
+  temp->right = NULL;
 
   if(root == NULL)
   {
@@ -112,17 +120,17 @@ void insert(int data)
 
     if(current->data > data)
     {
-      current = current->leftChild;
+      current = current->left;
 
       if(current==NULL)
-        parent->leftChild = temp;
+        parent->left = temp;
     }
     else
     { 
-      current = current->rightChild;
+      current = current->right;
       
       if(current==NULL)
-        parent->rightChild = temp;
+        parent->right = temp;
     }
   }
 }
@@ -135,9 +143,9 @@ void inorder(node *root)
 {
   if(root!=NULL)
   {
-    inorder(root->leftChild);
+    inorder(root->left);
     std::cout << root->data << "\t";
-    inorder(root->rightChild);
+    inorder(root->right);
   }
 }
 
@@ -149,8 +157,8 @@ void preorder(node *root)
   if(root!=NULL)
   {
     std::cout << root->data << "\t";
-    preorder(root->leftChild);
-    preorder(root->rightChild);
+    preorder(root->left);
+    preorder(root->right);
   }
 }
 
@@ -161,8 +169,8 @@ void postorder(node *root)
 {
   if(root!=NULL)
   {
-    postorder(root->leftChild);
-    postorder(root->rightChild);
+    postorder(root->left);
+    postorder(root->right);
     std::cout << root->data << "\t";
   }
 }
@@ -179,16 +187,19 @@ void inorderIterative(node *root)
       while(current!=NULL)
       {
         S.push(current);
-        current = current->leftChild;
+        current = current->left;
       }
 
       if(current==NULL)
       {
         if(!S.empty())
         {
-          std::cout << S.top()->data << "\t";
-          current = S.top()->rightChild;
+          current = S.top();
           S.pop();
+
+          std::cout << current->data << "\t";
+          
+          current = current->right;
         }
         else
           break;
@@ -211,10 +222,10 @@ void preorderIterative(node *root)
 
     std::cout << temp->data << "\t";
 
-    if(temp->rightChild)
-      stk.push(temp->rightChild);
-    if(temp->leftChild)
-      stk.push(temp->leftChild);
+    if(temp->right)
+      stk.push(temp->right);
+    if(temp->left)
+      stk.push(temp->left);
   }
 }
 
@@ -234,11 +245,11 @@ void postorderIterativeTwoStack(node *root)
 
     stk2.push(temp);
 
-    if(temp->leftChild)
-      stk1.push(temp->leftChild);
+    if(temp->left)
+      stk1.push(temp->left);
 
-    if(temp->rightChild)
-      stk1.push(temp->rightChild);
+    if(temp->right)
+      stk1.push(temp->right);
   }
 
   while(!stk2.empty())
@@ -246,6 +257,48 @@ void postorderIterativeTwoStack(node *root)
       std::cout << stk2.top()->data << "\t";
       stk2.pop();
     }
+}
+
+//-----------------------------------------------------------
+// Sum of K smallest Elements
+//-----------------------------------------------------------
+void sumOfKSmallest(node* root, int K)
+{
+  int sum = 0;
+  stack<node*> stk;
+
+  stk.push(root);
+  
+  node* current = root;
+
+  while(1)
+  {
+    while(current)
+    { 
+      stk.push(current);
+      current = current->left;
+    }
+    
+    if(!stk.empty())
+    {
+      current = stk.top();
+      sum += current->data;
+      if(--K == 0)
+        break;
+      
+      stk.pop();
+
+      current = current->right;
+      
+    }
+    else
+      break;
+  }
+
+
+  cout << sum;
+
+
 }
 
 void runBST()
@@ -257,6 +310,8 @@ void runBST()
   insert(3);
   insert(4);
 
+  sumOfKSmallest(root,4) ;
+
 
   //inorder(root); 
   //std::cout << std::endl;
@@ -265,9 +320,9 @@ void runBST()
   //preorder(root);
   //std::cout << std::endl;
   //preorderIterative(root);
-  postorder(root);
-  std::cout << std::endl;
-  postorderIterativeTwoStack(root);
+  //postorder(root);
+  //std::cout << std::endl;
+  //postorderIterativeTwoStack(root);
   
 
   //if(IsBalanced(root))
@@ -285,11 +340,11 @@ void runInsertBinaryTree(int elem)
   std::queue <node*> Q;
   node *nd;
   nd = new node(2);
-  nd->leftChild = new node(3);
-  nd->rightChild = new node(4);
-  nd->leftChild->leftChild = new node(5);
-  nd->leftChild->rightChild = new node(6);
-  nd->rightChild->rightChild = new node(8);
+  nd->left = new node(3);
+  nd->right = new node(4);
+  nd->left->left = new node(5);
+  nd->left->right = new node(6);
+  nd->right->right = new node(8);
 
   root = nd;
   
@@ -301,21 +356,21 @@ void runInsertBinaryTree(int elem)
     node* temp = Q.front();
     Q.pop();
 
-    if(temp->leftChild == NULL)
+    if(temp->left == NULL)
     {
-      temp->leftChild = newnd;
+      temp->left = newnd;
       break;
     }
     else
-      Q.push(temp->leftChild);
+      Q.push(temp->left);
 
-    if(temp->rightChild == NULL)
+    if(temp->right == NULL)
     {
-      temp->rightChild = newnd;
+      temp->right = newnd;
       break;
     }
     else
-      Q.push(temp->rightChild);
+      Q.push(temp->right);
   }
 
   inorder(root);
@@ -327,27 +382,29 @@ void findLastNode(node *root, int &elem, node **lastNode)
 {
   node *pre = root;
   auto *temp = root;
-  while(temp->rightChild)
+  while(temp->right)
   {
     pre = temp;
-    temp = temp->rightChild;
+    temp = temp->right;
   }
 
-  if(pre->leftChild && pre->rightChild)
+  if(pre->left && pre->right)
   {
-    elem = pre->rightChild->data;
-    *lastNode = pre->rightChild;
-    //pre->rightChild = NULL;
+    elem = pre->right->data;
+    *lastNode = pre->right;
+    //pre->right = NULL;
   }
   
-  if(!pre->rightChild && pre->leftChild)
+  if(!pre->right && pre->left)
   {
-    elem = pre->leftChild->data;
-    *lastNode = pre->leftChild;
-    //pre->leftChild = NULL;
+    elem = pre->left->data;
+    *lastNode = pre->left;
+    //pre->left = NULL;
   }
 
 }
+
+
 
 
 void runDeleteBinaryTree(int elem)
@@ -379,11 +436,11 @@ void runDeleteBinaryTree(int elem)
       break;
     }
 
-    if(temp->rightChild)
-      stk.push(temp->rightChild);
+    if(temp->right)
+      stk.push(temp->right);
 
-    if(temp->leftChild)
-      stk.push(temp->leftChild);
+    if(temp->left)
+      stk.push(temp->left);
   }
 
   inorder(root);

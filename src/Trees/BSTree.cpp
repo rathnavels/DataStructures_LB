@@ -13,6 +13,8 @@
 // 209 Preorder Iterative
 // 235 PostOrder Iterative Two Stack
 // 265 Sum of K smallest Elements
+// 304 Size Of Binary Tree
+// 330 Size Of Binar Tree Recursive
 
 using namespace std;
 
@@ -294,11 +296,45 @@ void sumOfKSmallest(node* root, int K)
     else
       break;
   }
-
-
   cout << sum;
+}
 
 
+//-----------------------------------------------------------
+// sizeOfBinaryTree
+//-----------------------------------------------------------
+void sizeOfBinaryTree(node* root)
+{
+  size_t size = 0;
+
+  stack<node*> stk;
+  stk.push(root);
+
+  while(!stk.empty())
+  {
+    node* temp = stk.top();
+    stk.pop();
+
+    size++;
+
+    if(temp->right)
+      stk.push(temp->right);
+    if(temp->left)
+      stk.push(temp->left);
+  }
+
+  cout << size;
+}
+
+//-----------------------------------------------------------
+// sizeOfBinaryTree Recursive
+//-----------------------------------------------------------
+int sizeOfBinaryTreeRecursive(node* root)
+{
+  if(root == NULL)
+    return 0;
+
+  return 1 + sizeOfBinaryTreeRecursive(root->left) + sizeOfBinaryTreeRecursive(root->right);
 }
 
 void runBST()
@@ -309,8 +345,10 @@ void runBST()
   insert(2);
   insert(3);
   insert(4);
+  insert(9);
+  insert(12);
 
-  sumOfKSmallest(root,4) ;
+  //sumOfKSmallest(root,4) ;
 
 
   //inorder(root); 
@@ -323,6 +361,8 @@ void runBST()
   //postorder(root);
   //std::cout << std::endl;
   //postorderIterativeTwoStack(root);
+
+   cout << sizeOfBinaryTreeRecursive(root);
   
 
   //if(IsBalanced(root))

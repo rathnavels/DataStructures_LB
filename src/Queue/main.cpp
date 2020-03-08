@@ -4,10 +4,11 @@
 #include <iostream>
 
 void runReverseQueueUsingStack();
+void runReverseQueueRecursion();
 
 void main()
 {
-  runReverseQueueUsingStack();
+  runReverseQueueRecursion();
 
   getchar();
 }

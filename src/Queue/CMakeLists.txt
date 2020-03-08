@@ -10,6 +10,7 @@ set(SOURCE
 	main.cpp
 	StackUsingQueue.cpp
 	ReverseQueueUsingStack.cpp
+	ReverseQueueRecursion.cpp
 	)
 	
 	

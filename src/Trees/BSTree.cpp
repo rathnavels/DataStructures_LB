@@ -14,7 +14,8 @@
 // 235 PostOrder Iterative Two Stack
 // 265 Sum of K smallest Elements
 // 304 Size Of Binary Tree
-// 330 Size Of Binar Tree Recursive
+// 330 Size Of Binary Tree Recursive
+// 359 Diameter Of Binary Tree
 
 using namespace std;
 
@@ -337,6 +338,33 @@ int sizeOfBinaryTreeRecursive(node* root)
   return 1 + sizeOfBinaryTreeRecursive(root->left) + sizeOfBinaryTreeRecursive(root->right);
 }
 
+//-----------------------------------------------------------
+// Diameter Helper
+//-----------------------------------------------------------
+int diameterHelper(node* root, int &diameter)
+{
+  if(!root) 
+    return 0;
+
+  int L = diameterHelper(root->left,diameter);
+  int R = diameterHelper(root->right,diameter);
+
+  diameter = max(diameter,L+R);
+  return max(L,R)+1;
+}
+
+//-----------------------------------------------------------
+// Diameter Of Binary Tree
+//-----------------------------------------------------------
+int diameterOfBinaryTree(node* root)
+{
+   int diameter = 0;
+   diameterHelper(root,diameter);
+   return diameter;
+}
+
+
+
 void runBST()
 {
   insert(5);
@@ -344,8 +372,11 @@ void runBST()
   insert(7);
   insert(2);
   insert(3);
-  insert(4);
   insert(9);
+  insert(12);
+  insert(1);
+  insert(-1);
+  insert(8);
   insert(12);
 
   //sumOfKSmallest(root,4) ;
@@ -362,7 +393,9 @@ void runBST()
   //std::cout << std::endl;
   //postorderIterativeTwoStack(root);
 
-   cout << sizeOfBinaryTreeRecursive(root);
+   //cout << sizeOfBinaryTreeRecursive(root);
+
+   cout << diameterOfBinaryTree(root);
   
 
   //if(IsBalanced(root))

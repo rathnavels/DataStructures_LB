@@ -3,12 +3,12 @@
 
 #include <iostream>
 
-void runAtoi();
+void runReverseQueueUsingStack();
 
 void main()
 {
 
-  
+  runReverseQueueUsingStack();
 
   getchar();
 }

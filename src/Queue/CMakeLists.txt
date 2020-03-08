@@ -9,6 +9,7 @@ project(Queue)
 set(SOURCE
 	main.cpp
 	StackUsingQueue.cpp
+	ReverseQueueUsingStack.cpp
 	)
 	
 	

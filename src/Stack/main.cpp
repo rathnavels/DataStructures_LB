@@ -7,8 +7,9 @@ void runNGEStack();
 void runValidateStackSequences();
 void runPostFix();
 void runInfixToPostfix();
+void runDeleteMiddleElement();
 void main()
 {
-  runInfixToPostfix();
+  runDeleteMiddleElement();
   getchar();
 }

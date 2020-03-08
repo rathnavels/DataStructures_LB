@@ -12,7 +12,8 @@ set(SOURCE
 	StackSequence.cpp
 	InfixToPostfix.cpp
 	QueueUsingStack.cpp
-	PostFix.cpp)
+	PostFix.cpp
+	DeleteMiddleElement.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

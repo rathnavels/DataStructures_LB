@@ -7,7 +7,6 @@ void runReverseQueueUsingStack();
 
 void main()
 {
-
   runReverseQueueUsingStack();
 
   getchar();

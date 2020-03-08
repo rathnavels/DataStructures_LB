@@ -6,8 +6,9 @@
 void runNGEStack();
 void runValidateStackSequences();
 void runPostFix();
+void runInfixToPostfix();
 void main()
 {
-  runPostFix();
+  runInfixToPostfix();
   getchar();
 }

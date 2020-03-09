@@ -13,7 +13,8 @@ set(SOURCE
 	InfixToPostfix.cpp
 	QueueUsingStack.cpp
 	PostFix.cpp
-	DeleteMiddleElement.cpp)
+	DeleteMiddleElement.cpp
+	ReverseStackRecursion.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

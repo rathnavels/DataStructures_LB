@@ -8,8 +8,9 @@ void runValidateStackSequences();
 void runPostFix();
 void runInfixToPostfix();
 void runDeleteMiddleElement();
+void runReverseStackRecursion();
 void main()
 {
-  runDeleteMiddleElement();
+  runReverseStackRecursion();
   getchar();
 }

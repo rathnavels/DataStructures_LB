@@ -9,6 +9,5 @@ void runReverseQueueRecursion();
 void main()
 {
   runReverseQueueRecursion();
-
   getchar();
 }

@@ -23,7 +23,6 @@ void runReverseQueueRecursion()
     std::cout << que.front() << "\t";
     que.pop();
   }
-  
 }
 
 void recurseHelper(queue<int> &que)

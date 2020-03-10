@@ -6,44 +6,45 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <set>
 
 
 using namespace std;
 
-vector<string> genPermutations(string str);
+set<string> genPermutations(string str);
 string insertCharAt(string word, char c, int i);
 
 void runStringPermutations()
 {
   string str = "abcd";
 
-  vector<string> retStr = genPermutations(str);
+  set<string> retStr = genPermutations(str);
 
   for(string s : retStr)
     std::cout << s << endl;
 }
 
-vector<string> genPermutations(string str)
+set<string> genPermutations(string str)
 {
-  vector<string> permutations; 
+  set<string> permutations; 
   
   if(str.length() == 0)
   {
-    permutations.push_back("");
+    permutations.insert("");
     return permutations;
   }
 
   char first = str[0];
 
   string remaining = str.substr(1);
-  vector<string> words = genPermutations(remaining);
+  set<string> words = genPermutations(remaining);
 
   for(string word : words)
   {
     for(int i = 0; i<=word.length(); i++)
     {
       string s = insertCharAt(word,first,i);
-      permutations.push_back(s);
+      permutations.insert(s);
     }
   }
   return permutations;

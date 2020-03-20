@@ -5,10 +5,10 @@
 
 void runTowerOfHanoi();
 
+
 void main()
 {
-
-  runTowerOfHanoi();
+ 
 
   getchar();
 }

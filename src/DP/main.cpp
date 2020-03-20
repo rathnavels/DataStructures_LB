@@ -4,11 +4,10 @@
 #include <iostream>
 
 void runStringPermutations();
+void runMinNumOfCoins();
 
 void main()
 {
-
-  runStringPermutations();
-
+  runMinNumOfCoins();
   getchar();
 }

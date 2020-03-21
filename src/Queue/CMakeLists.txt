@@ -11,6 +11,7 @@ set(SOURCE
 	StackUsingQueue.cpp
 	ReverseQueueUsingStack.cpp
 	ReverseQueueRecursion.cpp
+	DynamicQueue.cpp
 	)
 	
 	

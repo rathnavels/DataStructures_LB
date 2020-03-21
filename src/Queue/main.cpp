@@ -5,9 +5,10 @@
 
 void runReverseQueueUsingStack();
 void runReverseQueueRecursion();
+void runDynamicQueue();
 
 void main()
 {
-  runReverseQueueRecursion();
+  runDynamicQueue();
   getchar();
 }

@@ -14,7 +14,9 @@ set(SOURCE
 	QueueUsingStack.cpp
 	PostFix.cpp
 	DeleteMiddleElement.cpp
-	ReverseStackRecursion.cpp)
+	ReverseStackRecursion.cpp
+	SortStackRecursion.cpp
+	DynamicStack.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

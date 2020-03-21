@@ -9,9 +9,10 @@ void runPostFix();
 void runInfixToPostfix();
 void runDeleteMiddleElement();
 void runReverseStackRecursion();
-
+void runSortStackRecursion();
+void runDynamicStack();
 void main()
 {
-  runReverseStackRecursion();
+  runDynamicStack();
   getchar();
 }

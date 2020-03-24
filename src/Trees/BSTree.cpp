@@ -6,16 +6,22 @@
 #include<stack>
 #include <queue>
 
-// 132 Inorder Traversal
-// 149 Prorder Traversal
-// 162 PostOrder Traversal
-// 177 Inorder Iterative
-// 209 Preorder Iterative
-// 235 PostOrder Iterative Two Stack
-// 265 Sum of K smallest Elements
-// 304 Size Of Binary Tree
-// 330 Size Of Binary Tree Recursive
-// 359 Diameter Of Binary Tree
+// 151 Inorder Traversal
+// 164 Prorder Traversal
+// 177 PostOrder Traversal
+// 190 Inorder Iterative
+// 222 Preorder Iterative
+// 245 PostOrder Iterative Two Stack
+// 274 Sum of K smallest Elements
+// 312 Size Of Binary Tree
+// 338 Size Of Binary Tree Recursive
+// 364 Diameter Of Binary Tree
+// 396 Print Root To Leaf
+
+
+
+
+
 
 using namespace std;
 
@@ -365,7 +371,6 @@ int diameterOfBinaryTree(node* root)
 //-----------------------------------------------------------
 // Root To Leaf Helper
 //-----------------------------------------------------------
-
 void rootToLeafHelper(node* root, vector<int> &vec)
 {
   if(!root) return;

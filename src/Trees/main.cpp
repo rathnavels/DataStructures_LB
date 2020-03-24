@@ -15,8 +15,6 @@ void runDeleteBinaryTree(int);
 void main()
 {
    runBST();
-  
-
   std::cin.get();
 }
 

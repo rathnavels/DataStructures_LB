@@ -271,7 +271,6 @@ void sumOfKSmallest(node* root, int K)
   stack<node*> stk;
 
   stk.push(root);
-  
   node* current = root;
 
   while(1)
@@ -363,6 +362,37 @@ int diameterOfBinaryTree(node* root)
    return diameter;
 }
 
+//-----------------------------------------------------------
+// Root To Leaf Helper
+//-----------------------------------------------------------
+
+void rootToLeafHelper(node* root, vector<int> &vec)
+{
+  if(!root) return;
+  vec.push_back(root->data);
+
+  if (!root->left && !root->right)
+  {
+      for(int i=0; i<vec.size(); i++)
+        cout << vec[i] << "\t";
+
+      cout << "\n";
+
+      vec = {};
+  }
+  vector<int> dup = vec;
+  rootToLeafHelper(root->left,vec);
+  rootToLeafHelper(root->right,dup);
+}
+
+//-----------------------------------------------------------
+// Print Root To Leaf
+//-----------------------------------------------------------
+void runPrintRootToLeafPaths(node* root)
+{
+  vector<int> vec;
+  rootToLeafHelper(root,vec);
+}
 
 
 void runBST()
@@ -378,6 +408,8 @@ void runBST()
   insert(-1);
   insert(8);
   insert(12);
+
+  runPrintRootToLeafPaths(root);
 
   //sumOfKSmallest(root,4) ;
 
@@ -395,7 +427,7 @@ void runBST()
 
    //cout << sizeOfBinaryTreeRecursive(root);
 
-   cout << diameterOfBinaryTree(root);
+   //cout << diameterOfBinaryTree(root);
   
 
   //if(IsBalanced(root))

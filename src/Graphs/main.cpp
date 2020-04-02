@@ -3,12 +3,13 @@
 
 #include <iostream>
 
-void runGraph101();
+void runGraphDFS();
+void runGraphWeightedDFS();
 
 void main()
 {
 
-  runGraph101();
+  runGraphWeightedDFS();
 
   getchar();
 }

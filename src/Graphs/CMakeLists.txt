@@ -8,7 +8,8 @@ project(Graphs)
 
 set(SOURCE
 	main.cpp
-	Graph101.cpp
+	GraphDFS.cpp
+	GraphWeightedDFS.cpp
 	)
 	
 	

@@ -9,15 +9,15 @@
 
 using namespace std;
 
-vector<vector<int>> adj;
+static vector<vector<int>> adj;
 
-void addEdge(int u, int v)
+static void addEdge(int u, int v)
 {
   adj[u].push_back(v);
   adj[v].push_back(u);
 }
 
-void DFSUtil(int u, vector<bool> &visited, vector<vector<int>> &adj)
+static void DFSUtil(int u, vector<bool> &visited, vector<vector<int>> &adj)
 {
   visited[u] = true;
   cout << u << "\t";
@@ -30,7 +30,7 @@ void DFSUtil(int u, vector<bool> &visited, vector<vector<int>> &adj)
 }
 
 // DFS
-void DFS(int V)
+static void DFS(int V)
 {
   vector<bool> visited(V,false);
 
@@ -41,7 +41,7 @@ void DFS(int V)
   }
 }
 
-void runGraph101()
+void runGraphDFS()
 {
   int V = 5;
   adj.resize(5);

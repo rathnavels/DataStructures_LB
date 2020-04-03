@@ -5,9 +5,10 @@
 
 void runStringPermutations();
 void runMinNumOfCoins();
+void runLargestSumSubArray();
 
 void main()
 {
-  runMinNumOfCoins();
+  runLargestSumSubArray();
   getchar();
 }

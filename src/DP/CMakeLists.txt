@@ -10,6 +10,7 @@ set(SOURCE
 	main.cpp
 	StringPermutations.cpp
 	MinimumNoOfCoins.cpp
+	LargestSumSubArray.cpp
 	)
 	
 	

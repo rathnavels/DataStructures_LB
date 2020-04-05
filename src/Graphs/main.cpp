@@ -5,11 +5,12 @@
 
 void runGraphDFS();
 void runGraphWeightedDFS();
+void runGraphBFS();
+void runGraphUsingSet();
+void runTopoSort();
 
 void main()
 {
-
-  runGraphWeightedDFS();
-
+  runTopoSort();
   getchar();
 }

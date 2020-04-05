@@ -10,6 +10,9 @@ set(SOURCE
 	main.cpp
 	GraphDFS.cpp
 	GraphWeightedDFS.cpp
+	GraphBFS.cpp
+	GraphUsingSet.cpp
+	TopoSort.cpp
 	)
 	
 	

@@ -8,9 +8,10 @@ void runGraphWeightedDFS();
 void runGraphBFS();
 void runGraphUsingSet();
 void runTopoSort();
+void runStartToEnd();
 
 void main()
 {
-  runTopoSort();
+  runStartToEnd();
   getchar();
 }

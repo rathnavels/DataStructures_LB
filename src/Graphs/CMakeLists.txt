@@ -14,6 +14,8 @@ set(SOURCE
 	GraphUsingSet.cpp
 	TopoSort.cpp
 	StartToEnd.cpp
+	DetectCycleDirected.cpp
+	ShortestPathDirectedUW.cpp
 	)
 	
 	

@@ -6,6 +6,8 @@
 #include <vector>
 using namespace std;
 
+// This program takes two nodes and checks if they are connected
+
 static vector<vector<int>> adj;
 
 bool IsConnected = false;

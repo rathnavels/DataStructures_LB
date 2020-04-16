@@ -9,9 +9,11 @@ void runGraphBFS();
 void runGraphUsingSet();
 void runTopoSort();
 void runStartToEnd();
+void runDetectCycleDirected();
+void runShortestPathDirectedUW();
 
 void main()
 {
-  runStartToEnd();
+  runShortestPathDirectedUW();
   getchar();
 }

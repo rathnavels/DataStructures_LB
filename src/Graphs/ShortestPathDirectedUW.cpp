@@ -8,6 +8,9 @@
 
 using namespace std;
 
+// This works for directed acyclic graph
+// This doesn't work for cyclic graphs
+
 static vector<vector<int>> adj;
 
 static void addEdge(int u, int v)
@@ -15,14 +18,14 @@ static void addEdge(int u, int v)
   adj[u].push_back(v);
 }
 
-void findShortestPathLength(int start, vector<bool> &visited, vector<int> &lengths, int prevLen)
+void findShortestPathLength(int start, int current, int end, vector<bool> &visited, vector<int> &lengths, int prevLen)
 {
   prevLen++;
-  lengths[start] = min(lengths[start],prevLen);
-  for (int i = 0; i < adj[start].size(); i++)
-  {
-    findShortestPathLength(adj[start][i],visited,lengths,lengths[start]);
-  }
+  lengths[current] = min(lengths[current],prevLen);
+  
+  for (int i = 0; i < adj[current].size(); i++)
+      findShortestPathLength(start, adj[current][i], end, visited, lengths, lengths[current]);
+  
 }
 
 void runShortestPathDirectedUW()
@@ -43,13 +46,14 @@ void runShortestPathDirectedUW()
   addEdge(6,5);
 
   vector<bool> visited(N,false);
-  int start = 4;
-  int end = 5;
+  int start = 2;
+  int end = 3;
   vector<int> lengths(N,INT_MAX);
   int previousLength = -1;
   
-  findShortestPathLength(start, visited, lengths, previousLength);
+  findShortestPathLength(start, start, end, visited, lengths, previousLength);
 
-  cout << "Shortest Length is " << lengths[end];
+  for(int i=0; i<lengths.size(); i++)
+  cout << lengths[i] << "\t";
   
 }

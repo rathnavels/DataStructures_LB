@@ -11,9 +11,10 @@ void runTopoSort();
 void runStartToEnd();
 void runDetectCycleDirected();
 void runShortestPathDirectedUW();
+void runDetectCycleUnDirected();
 
 void main()
 {
-  runShortestPathDirectedUW();
+  runDetectCycleUnDirected();
   getchar();
 }

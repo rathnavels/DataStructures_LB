@@ -16,6 +16,8 @@ set(SOURCE
 	StartToEnd.cpp
 	DetectCycleDirected.cpp
 	ShortestPathDirectedUW.cpp
+	StringUsingGraph.cpp
+	DetectCycleUnDirected.cpp
 	)
 	
 	

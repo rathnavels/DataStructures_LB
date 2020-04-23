@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <stack>
 
 using namespace std;
 
@@ -15,34 +16,50 @@ static void addEdge(int u, int v)
   adj[u].push_back(v);
 }
 
-bool isCyclicUtil(int i, vector<bool> &visited, vector<bool> &recStack)
+static enum Status
 {
-  if (visited[i] == false)
-  {
-    visited[i] = true;
-    recStack[i] = true;
-
-    for (int j = 0; j < adj[i].size(); i++)
-    {
-      if(!visited[adj[i][j]] && isCyclicUtil(adj[i][j],visited,recStack))
-        return true;
-      else if(recStack[adj[i][j]])
-        return true;
-    }
-  }
-  recStack[i] = false;
-  return false;
-}
+  UNVISITED = -1,
+  STACKED,
+  VISITED
+};
 
 
 bool isCyclic()
 {
-  vector<bool> visited(N,false);
-  vector<bool> recStack(N, false);
+  vector<int> visited(N,-1);
 
-  for(int i=0; i<N; i++)
-    if(isCyclicUtil(i,visited,recStack))
-      return true;
+  stack<int> stk;
+  stk.push(0);
+  visited[0] = STACKED;
+  
+  while (!stk.empty())
+  {
+    int top = stk.top();
+
+    if(adj[top].size() == 0)
+    { 
+      visited[top] = VISITED;
+      stk.pop();
+      top = stk.top();
+    }
+    int visitedCount = 0;
+    for (int i = 0; i < adj[top].size(); i++)
+    {
+      if(visited[adj[top][i]] == UNVISITED)
+      { 
+        stk.push(adj[top][i]);
+        visited[adj[top][i]] = STACKED;
+      }
+      else if(visited[adj[top][i]] == STACKED)
+        return true;
+      else
+      { 
+        visitedCount++;
+        if(visitedCount == adj[top].size())
+          return true;
+      }
+    }
+  }
 
   return false;
 }
@@ -50,13 +67,13 @@ bool isCyclic()
 
 void runDetectCycleDirected()
 {
-  adj.resize(4);
+  adj.resize(N);
   
-
-  addEdge(0, 1);
-  addEdge(1, 2);
+  addEdge(0, 2);
+  addEdge(0, 3);
+  addEdge(2, 4);
+  //addEdge(1, 2);
   addEdge(2, 3);
-  //addEdge(3, 0);
 
   bool retValue = false;
 

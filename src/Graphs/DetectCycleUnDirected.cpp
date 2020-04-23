@@ -1,5 +1,5 @@
 //Rathinavel Sankaralingam
-//April 14, 2020
+//April 17, 2020
 
 
 #include <iostream>
@@ -11,7 +11,7 @@ using namespace std;
 static vector<vector<int>> adj;
 static int N = 4;
 
-enum Status
+static enum Status
 {
   UNVISITED = -1,
   QUEUED,

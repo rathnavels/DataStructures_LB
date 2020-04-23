@@ -1,14 +1,14 @@
 //Rathinavel Sankaralingam
-//Jan 10, 2020
+//Apr 23, 2020
 
 #include <iostream>
 
-void runAtoi();
+void runMaxHeap();
 
 void main()
 {
 
-  runAtoi();
+  runMaxHeap();
 
   getchar();
 }

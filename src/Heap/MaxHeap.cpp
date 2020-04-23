@@ -60,12 +60,12 @@ private:
 public:
   unsigned int size()
   {
-    A.size();
+    return A.size();
   }
 
   bool empty()
   {
-    return (size == 0);
+    return (size() == 0);
   }
 
   void push(int key)
@@ -93,11 +93,33 @@ public:
 
   int top()
   {
-
+      return A[0];
   }
 };
 
 void runMaxHeap()
 {
   PriorityQueue pq;
+
+  pq.push(10);
+  pq.push(19);
+  pq.push(16);
+
+  cout << pq.top() << "\n";
+
+  pq.pop();
+
+  pq.push(18);
+
+  cout << pq.top() << "\n";
+
+  pq.push(22);
+
+  pq.push(27);
+
+  cout << pq.top() << "\n";
+
+  pq.pop();
+
+  cout << pq.top() << "\n";
 }

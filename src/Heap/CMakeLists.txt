@@ -9,6 +9,8 @@ project(Heap)
 set(SOURCE
 	main.cpp
 	MaxHeap.cpp
+	STLHeap.cpp
+	PriorityQueue.cpp
 	)
 	
 	

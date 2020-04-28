@@ -4,11 +4,11 @@
 #include <iostream>
 
 void runMaxHeap();
+void runSTLHeap();
+void runPriorityQueue();
 
 void main()
 {
-
-  runMaxHeap();
-
+  runPriorityQueue();
   getchar();
 }

@@ -6,9 +6,10 @@ void runMatrixSpiral();
 void runPetrolPump();
 void runAtoi();
 void runRaintrap();
+void runLRUCache();
 
 void main()
 {
-  runRaintrap();
+  runLRUCache();
   getchar();
 }

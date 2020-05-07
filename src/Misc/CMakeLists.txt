@@ -12,7 +12,8 @@ set(SOURCE
 	Template.cpp
 	MatrixSpiral.cpp
 	PetrolPump.cpp
-	RainWater.cpp)
+	RainWater.cpp
+	LRUCache.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

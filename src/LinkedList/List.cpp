@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 class List
 {
@@ -218,9 +219,7 @@ void sort()
     {
       if(node->val > nxt->val)      
       {
-        auto temp = node->val;
-        node->val = nxt->val;
-        nxt->val = temp;
+        std::swap(node->val,nxt->val);
       }
     }
   }

@@ -15,4 +15,6 @@ add_subdirectory(DP)
 add_subdirectory(Recursion)
 add_subdirectory(Graphs)
 add_subdirectory(Heap)
+add_subdirectory(Tries)
+
 

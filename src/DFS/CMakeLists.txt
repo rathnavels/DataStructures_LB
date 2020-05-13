@@ -3,14 +3,12 @@ cmake_minimum_required(VERSION 3.6)
 set (CMAKE_VERBOSE_MAKEFILE 1)
 
 
-project(Tries)
+project(DFS)
 
 
 set(SOURCE
 	main.cpp
-	Trie01.cpp
-	Trie02.cpp
-	Trie03.cpp
+	decodeString.cpp
 	)
 	
 	

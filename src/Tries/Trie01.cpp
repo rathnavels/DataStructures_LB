@@ -11,7 +11,7 @@ using namespace std;
 
 #define ALPHABET_SIZE 26
 
-class TrieNode
+static class TrieNode
 {
 public:
   class TrieNode *children[ALPHABET_SIZE];
@@ -31,7 +31,7 @@ TrieNode *getNode(void)
   return pNode;
 }
 
-void insert(struct TrieNode *root, string key)
+void insert(TrieNode *root, string key)
 {
   TrieNode *pCrawl = root;
   
@@ -46,7 +46,7 @@ void insert(struct TrieNode *root, string key)
   pCrawl->isEndOfWord = true;  
 }
 
-bool search(struct TrieNode *root, string key)
+bool search(TrieNode *root, string key)
 {
   TrieNode* pCrawl = root;
   
@@ -63,7 +63,7 @@ bool search(struct TrieNode *root, string key)
 }
 
 
-void runTrie()
+void runTrie01()
 {
   string keys[] = {"the","a","tomoato","is","very","good","veg"};
 

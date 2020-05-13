@@ -3,12 +3,13 @@
 
 #include <iostream>
 
-void runTrie();
+void runTrie01();
+void runTrie02();
+void runTrie03();
 
 void main()
 {
-
-  runTrie();
-
+  runTrie03();
   getchar();
 }
+

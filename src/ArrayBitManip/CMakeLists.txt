@@ -18,7 +18,10 @@ set(SOURCE
 	SwapThreeNum.cpp
 	NumberofBits.cpp
 	NextGreaterElement.cpp
-	FlipBits.cpp)
+	FlipBits.cpp
+	NearestSameWeight.cpp
+	ProductSansArith.cpp
+	QuotientSansArith.cpp)
 	
 	
 add_executable(${PROJECT_NAME} ${SOURCE})

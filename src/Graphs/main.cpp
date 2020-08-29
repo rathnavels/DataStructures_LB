@@ -12,9 +12,10 @@ void runStartToEnd();
 void runDetectCycleDirected();
 void runShortestPathDirectedUW();
 void runDetectCycleUnDirected();
+void runKruskals01();
 
 void main()
 {
-  runDetectCycleUnDirected();
+  runKruskals01();
   getchar();
 }

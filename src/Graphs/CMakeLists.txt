@@ -18,6 +18,8 @@ set(SOURCE
 	ShortestPathDirectedUW.cpp
 	StringUsingGraph.cpp
 	DetectCycleUnDirected.cpp
+	Dijkstra.cpp
+	Kruskals01.cpp
 	)
 	
 	

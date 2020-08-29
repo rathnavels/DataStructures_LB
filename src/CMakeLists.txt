@@ -17,5 +17,6 @@ add_subdirectory(Graphs)
 add_subdirectory(Heap)
 add_subdirectory(Tries)
 add_subdirectory(DFS)
+add_subdirectory(DisjointSet)
 
 

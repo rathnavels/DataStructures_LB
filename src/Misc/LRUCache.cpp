@@ -64,10 +64,5 @@ void runLRUCache()
   lc.refer(6);
   lc.refer(2);
   lc.display();
-
-  vector<int> k = {1,2,3};
-
-  cout << "\n" << k.capacity();
-
   
 }

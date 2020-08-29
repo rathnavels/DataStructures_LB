@@ -16,22 +16,13 @@ void runNextGreaterElement();
 void runNGEStack();
 
 void runFlipBits();
+void runNearestSameWeight();
+void runProductSansArith();
 
 void main()
 {
 
-  //runFlipBits();
-
-  //runNumBits();
-  //runSwapThree1();
-  //runSwapThree2();
-
-  runMinSizeSubArray();
-  //runMaxProduct();
-  //runPrintDuplicate();  
-  //runSubArrayZeroOptimzed();
-  //runSubArrayZeroBruteForce();
-  //runWave();
+  runProductSansArith();
 
   getchar();
 }

@@ -14,7 +14,7 @@ int countNumBits(int k);
 
 void runFlipBits()
 {
-  int num = 12;
+  int num = 4;
   int flippedNum = 0;
   
   int count = countNumBits(num);

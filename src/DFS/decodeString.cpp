@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include <set>
 
 using namespace std;
 
@@ -22,7 +23,7 @@ enum
 
 void runDecodeString()
 {
-  string str = "3[bef]3[a2[ca]]";
+  string str = "2[t2[u1[vw2[x3[yz]]]]]";
   stack<pair<string,int>> stk;
   string ans;
   
@@ -90,5 +91,12 @@ void runDecodeString()
   {
     ans += get<0>(stk.top());
   }
-  cout << ans;
+
+  set<string> st;
+
+  st.insert(ans);
+  st.insert("tuvwxyzyzyzxyzyzyzuvwxyzyzyzxyzyzyztuvwxyzyzyzxyzyzyzuvwxyzyzyzxyzyzyz");
+  
+  for(string str : st)
+    cout << str << endl;
 }

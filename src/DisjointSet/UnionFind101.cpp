@@ -50,7 +50,7 @@ void printSets(vector<int> const &universe, DisjointSet &ds)
 
 void runUnionFind101()
 {
-  vector<int> universe = {1,2,3,4,5};
+  vector<int> universe = {1,2,3,4,5,6,7};
   
   DisjointSet ds;
 

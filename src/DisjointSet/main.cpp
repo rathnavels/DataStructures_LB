@@ -4,9 +4,10 @@
 #include <iostream>
 
 void runUnionFind101();
+void runCycleDetection();
 
 void main()
 {
-  runUnionFind101();
+  runCycleDetection();
   getchar();
 }

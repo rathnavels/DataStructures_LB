@@ -9,6 +9,7 @@ project(DisjointSet)
 set(SOURCE
 	main.cpp
 	UnionFind101.cpp
+	CycleDetection01.cpp
 	)
 	
 	

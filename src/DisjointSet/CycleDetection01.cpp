@@ -10,70 +10,70 @@ using namespace std;
 
 struct Edge
 {
-  int src, dest;
+  int src, dst;
 };
 
 class Graph
 {
-  public:
-    vector<vector<int>> adjList;
+public:
 
-    Graph(vector<Edge> const &edges, int N)
+  vector<vector<int>> adjList;
+
+  Graph(vector<Edge> &edges, int N)
+  {
+    adjList.resize(N+1);
+    for (auto edge : edges)
     {
-      adjList.resize(N+1);
-
-      for (auto edge : edges)
-        adjList[edge.src].push_back(edge.dest);
+      adjList[edge.src].push_back(edge.dst);
     }
+  }
 };
 
-static class DisjointSet
+class Main
 {
-  private:
-    unordered_map<int, int> parent;
-
-  public:
-
-    void makeSet(int N)
+  unordered_map<int ,int> parent;
+  
+public:
+  void makeSet(int N)
+  {
+    for (int i = 1; i <= N; i++)
     {
-      for(int i=1; i<=N; i++)
-        parent[i] = i;
+      parent[i] = i;
     }
+  }
 
-    int Find(int i)
-    {
-      if(parent[i] == i)
-        return i;
+  int find(int k)
+  {
+    if(parent[k] == k)
+      return k;
 
-      return Find(parent[i]);
-    }
+    find(parent[k]);
+  }
 
-    void Union(int a, int b)
-    {
-      int x = Find(a);
-      int y = Find(b);
-
-      parent[x] = y;
-    }
+  void _union(int a, int b)
+  {
+    int A = find(a);
+    int B = find(b);
+    
+    parent[A] = B;
+  }
 };
 
-bool findCycle(Graph const &graph, int N)
+bool findCycle(Graph &gr, int N)
 {
-  DisjointSet ds;
-
+  Main ds;
   ds.makeSet(N);
-
+  
   for (int u = 1; u <= N; u++)
   {
-    for (int v : graph.adjList[u])
+    int U = ds.find(u);
+    for (int v : gr.adjList[u])
     {
-      int x = ds.Find(u);
-      int y = ds.Find(v);
-
-      if(x == y)
+      int V = ds.find(v);
+      if(U == V)
         return true;
       else
-        ds.Union(x,y);
+        ds._union(U,V);
     }
   }
   return false;
@@ -81,19 +81,22 @@ bool findCycle(Graph const &graph, int N)
 
 void runCycleDetection()
 {
-  vector<Edge> edges = 
+  vector<Edge> edges =
   {
-    {1,2}, {1,7}, {1,8}, {2,3}, {2,6}, {3,4},
-    {3,5}, {8,9}, {8,12}, {9,10}, {9,11}, {11,12}
+    {1, 2}, {1, 7}, {1, 8}, {2, 3}, {2, 6}, {3, 4},
+    {3, 5}, {8, 9}, {8, 12}, {9, 10}, {10, 11}, {11, 12}
+    // edge (11, 12) introduces a cycle in the graph
   };
 
+  // Number of nodes in the graph
   int N = 12;
 
-  Graph graph(edges, N);
-    
-  if (findCycle(graph, N))
-    cout << "Cycle Found";
+  Graph graph(edges,N);
+  
+  if(findCycle(graph,N))
+    cout << "Yes\n";
   else
-    cout << "No Cycle";
+    cout << "No\n";
+
   
 }

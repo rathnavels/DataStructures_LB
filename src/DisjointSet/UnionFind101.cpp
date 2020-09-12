@@ -22,10 +22,18 @@ public:
 
   int Find(int i)
   {
-    if(parent[i] == i)
-      return i;
-    
-    return Find(parent[i]);
+    //if(parent[i] == i)
+    //  return i;
+    //
+    //return Find(parent[i]);
+
+    while (1)
+    {
+      if(parent[i] == i)
+        return i;
+      else
+        i = parent[i];
+    }
   }
 
   void Union (int a, int b)
